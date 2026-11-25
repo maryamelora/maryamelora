@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maryam Elora | Luxury Stainless Steel Jewellery</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #171411;
+  color: #f5eadb;
+  font-family: 'Montserrat', sans-serif;
+}
+
+:root {
+  --black: #171411;
+  --brown: #704a2c;
+  --gold: #c49a62;
+  --cream: #e8d8bf;
+}
+
+header {
+  background: #171411;
+  padding: 22px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #704a2c;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  color: var(--gold);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 34px;
+  letter-spacing: 4px;
+}
+
+nav a {
+  color: var(--cream);
+  text-decoration: none;
+  margin-left: 28px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  transition: .3s;
+}
+
+nav a:hover {
+  color: var(--gold);
+}
+
+.cart {
+  color: var(--gold);
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.hero {
+  min-height: 620px;
+  background:
+  linear-gradient(90deg, rgba(15,12,10,.85), rgba(15,12,10,.2)),
+  url('https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=1800')
+  center/cover;
+  display: flex;
+  align-items: center;
+  padding: 8%;
+}
+
+.hero-content {
+  max-width: 560px;
+}
+
+.hero small {
+  color: var(--gold);
+  letter-spacing: 5px;
+  font-size: 12px;
+}
+
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(50px, 7vw, 82px);
+  line-height: 1.05;
+  margin: 22px 0;
+  font-weight: 500;
+}
+
+.hero p {
+  color: #e3d3bf;
+  line-height: 1.9;
+  font-size: 14px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 15px 34px;
+  background: var(--gold);
+  color: #171411;
+  text-decoration: none;
+  letter-spacing: 2px;
+  font-size: 11px;
+  border: 1px solid var(--gold);
+  transition: .3s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: transparent;
+  color: var(--gold);
+}
+
+.section {
+  padding: 85px 7%;
+  text-align: center;
+}
+
+.section-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 48px;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #b7a48e;
+  margin-bottom: 45px;
+}
+
+.categories {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+}
+
+.category {
+  background: #241d17;
+  padding: 35px 10px;
+  border: 1px solid #493421;
+  transition: .3s;
+}
+
+.category:hover {
+  background: var(--brown);
+  transform: translateY(-5px);
+}
+
+.category h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 25px;
+  color: var(--cream);
+}
+
+.products {
+  background: #211a15;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  text-align: left;
+}
+
+.product {
+  background: #171411;
+  border: 1px solid #493421;
+  overflow: hidden;
+}
+
+.product img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: .5s;
+}
+
+.product:hover img {
+  transform: scale(1.04);
+}
+
+.product-info {
+  padding: 20px;
+}
+
+.product-info h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 25px;
+  color: var(--cream);
+}
+
+.product-info p {
+  color: var(--gold);
+  margin: 12px 0;
+  font-size: 14px;
+}
+
+.add-cart {
+  width: 100%;
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  padding: 12px;
+  cursor: pointer;
+  letter-spacing: 2px;
+  transition: .3s;
+}
+
+.add-cart:hover {
+  background: var(--gold);
+  color: var(--black);
+}
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 55px;
+  text-align: left;
+}
+
+.about img {
+  width: 100%;
+  max-height: 480px;
+  object-fit: cover;
+}
+
+.about p {
+  color: #c5b39e;
+  font-size: 14px;
+  line-height: 2;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.feature {
+  border: 1px solid #704a2c;
+  padding: 35px 15px;
+}
+
+.feature h3 {
+  color: var(--gold);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.feature p {
+  color: #c5b39e;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+footer {
+  background: #0e0c0a;
+  padding: 55px 7%;
+  text-align: center;
+  border-top: 1px solid #704a2c;
+}
+
+footer .logo {
+  margin-bottom: 15px;
+}
+
+footer p {
+  color: #b7a48e;
+  font-size: 12px;
+  line-height: 2;
+}
+
+footer a {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+#cart-count {
+  color: white;
+}
+
+@media(max-width: 750px) {
+  header {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  nav {
+    width: 100%;
+    text-align: center;
+  }
+
+  nav a {
+    margin: 8px;
+    display: inline-block;
+  }
+
+  .categories {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: 520px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">MARYAM ELORA</div>
+
+  <nav>
+    <a href="#home">HOME</a>
+    <a href="#shop">SHOP</a>
+    <a href="#about">ABOUT</a>
+    <a href="#contact">CONTACT</a>
+  </nav>
+
+  <div class="cart">
+    BAG (<span id="cart-count">0</span>)
+  </div>
+</header>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+  <div class="hero-content">
+    <small>THE ART OF ELEGANCE</small>
+
+    <h1>Elegance That Lasts Forever.</h1>
+
+    <p>
+      Discover timeless stainless steel jewellery
+      designed to elevate your everyday style.
+      Where sophistication meets modern luxury.
+    </p>
+
+    <a href="#shop" class="btn">EXPLORE COLLECTION</a>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+
+<section class="section">
+  <h2 class="section-heading">Our Collections</h2>
+  <p class="subtitle">DISCOVER YOUR SIGNATURE STYLE</p>
+
+  <div class="categories">
+    <div class="category"><h3>Rings</h3></div>
+    <div class="category"><h3>Necklaces</h3></div>
+    <div class="category"><h3>Bracelets</h3></div>
+    <div class="category"><h3>Earrings</h3></div>
+    <div class="category"><h3>Sets</h3></div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+
+<section class="section products" id="shop">
+  <h2 class="section-heading">Featured Jewellery</h2>
+  <p class="subtitle">TIMELESS PIECES, BEAUTIFUL DETAILS</p>
+
+  <div class="product-grid">
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=700" alt="Gold jewellery">
+      <div class="product-info">
+        <h3>Golden Elegance</h3>
+        <p>Rs. 2,499</p>
+        <button class="add-cart" onclick="addToCart()">ADD TO BAG</button>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=700" alt="Elegant necklace">
+      <div class="product-info">
+        <h3>Classic Necklace</h3>
+        <p>Rs. 2,999</p>
+        <button class="add-cart" onclick="addToCart()">ADD TO BAG</button>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=700" alt="Luxury bracelet">
+      <div class="product-info">
+        <h3>Royal Bracelet</h3>
+        <p>Rs. 1,999</p>
+        <button class="add-cart" onclick="addToCart()">ADD TO BAG</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+
+<section class="section about" id="about">
+  <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=900" alt="Maryam Elora jewellery collection">
+
+  <div>
+    <h2 class="section-heading">About Maryam Elora</h2>
+    <p>
+      Maryam Elora celebrates the beauty of timeless elegance.
+      Our stainless steel jewellery collection brings together
+      sophisticated designs, modern details and everyday luxury.
+
+      <br><br>
+
+      Every piece is selected to help you express your
+      individuality and make every moment special.
+    </p>
+
+    <a href="#shop" class="btn">DISCOVER MORE</a>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+
+<section class="section">
+  <h2 class="section-heading">The Maryam Elora Experience</h2>
+  <p class="subtitle">LUXURY IN EVERY DETAIL</p>
+
+  <div class="features">
+
+    <div class="feature">
+      <h3>Premium Material</h3>
+      <p>Beautifully designed stainless steel jewellery.</p>
+    </div>
+
+    <div class="feature">
+      <h3>Timeless Designs</h3>
+      <p>Elegant styles for everyday wear and special occasions.</p>
+    </div>
+
+    <div class="feature">
+      <h3>Everyday Luxury</h3>
+      <p>Discover beautiful pieces that complement your style.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer id="contact">
+  <div class="logo">MARYAM ELORA</div>
+
+  <p>Elegance That Lasts Forever.</p>
+  <p>Premium Stainless Steel Jewellery</p>
+
+  <p>
+    <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+    &nbsp; | &nbsp;
+    <a href="https://wa.me/923000000000" target="_blank">WhatsApp</a>
+  </p>
+
+  <p>© 2026 Maryam Elora. All Rights Reserved.</p>
+</footer>
+
+<script>
+let cartCount = 0;
+
+function addToCart() {
+  cartCount++;
+  document.getElementById("cart-count").textContent = cartCount;
+  alert("Product added to your bag!");
+}
+</script>
+
+</body>
+</html>
