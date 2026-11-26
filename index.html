@@ -45,7 +45,16 @@ header {
   font-size: 34px;
   letter-spacing: 4px;
 }
-
+  
+.center-logo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 65px;
+  width: auto;
+  object-fit: contain;
+}
 nav a {
   color: var(--cream);
   text-decoration: none;
@@ -297,7 +306,14 @@ footer a {
     flex-wrap: wrap;
     gap: 15px;
   }
-
+  
+.center-logo {
+  height: 45px;
+  position: static;
+  transform: none;
+  margin: 0 auto;
+}
+  
   nav {
     width: 100%;
     text-align: center;
@@ -334,7 +350,15 @@ footer a {
 <body>
 
 <header>
+  <header>
   <a href="#home" class="logo">MARYAM ELORA</a>
+
+  <img
+    src="WhatsApp Image 2026-11-26 at 3.56.54 PM.jpeg"
+    alt="Maryam Elora Logo"
+    class="center-logo"
+  >
+
   <nav>
     <a href="#home">HOME</a>
     <a href="#shop">SHOP</a>
